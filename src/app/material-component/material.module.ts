@@ -33,6 +33,8 @@ import { MemberComponent } from './member/member.component';
 import { UserComponent } from './user/user.component';
 import { SettingComponent } from './setting/setting.component';
 import { ComputerService } from './computer/computer.service';
+import { MatDialogModule } from '@angular/material';
+import { CreateComputerComponent } from './computer/create-computer/create-computer.component';
 
 @NgModule({
   imports: [
@@ -43,13 +45,15 @@ import { ComputerService } from './computer/computer.service';
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    CdkTableModule
+    CdkTableModule,
+    MatDialogModule
   ],
   providers: [
     ComputerService
   ],
   entryComponents: [
-    DialogOverviewExampleDialog
+    DialogOverviewExampleDialog,
+    CreateComputerComponent
   ],
   declarations: [
     ButtonsComponent,
@@ -72,7 +76,8 @@ import { ComputerService } from './computer/computer.service';
     ComputerComponent,
     MemberComponent,
     UserComponent,
-    SettingComponent
+    SettingComponent,
+    CreateComputerComponent
   ]
 })
 
