@@ -24,7 +24,6 @@ export class ComputerComponent implements OnInit {
 
   createModal() {
     this.createComputer = this.dialog.open(CreateComputerComponent);
-    console.log('Create Computer');
   }
 
 }

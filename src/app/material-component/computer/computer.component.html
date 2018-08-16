@@ -1,5 +1,5 @@
 <div>
-  <div>
+  <div class="create-btn">
     <button mat-raised-button color="primary" (click)="createModal()">New Computer</button>
   </div>
 
@@ -17,26 +17,26 @@
         </tr>
         </thead>
         <tbody>
-        <!--<tr *ngFor="let computer of computers" class="computer-data">-->
-        <!--<td>{{computer.computer_name}}</td>-->
-        <!--<td>{{computer.ip_addresss}}</td>-->
+        <tr *ngFor="let computer of computers" class="computer-data">
+        <td>{{computer.computer_name}}</td>
+        <td>{{computer.ip_address}}</td>
+        </tr>
+        <!--<tr class="computer-data">-->
+          <!--<td>-->
+            <!--PC 1-->
+          <!--</td>-->
+          <!--<td>-->
+            <!--192.168.8.100-->
+          <!--</td>-->
         <!--</tr>-->
-        <tr class="computer-data">
-          <td>
-            PC 1
-          </td>
-          <td>
-            192.168.8.100
-          </td>
-        </tr>
-        <tr class="computer-data">
-          <td>
-            PC 2
-          </td>
-          <td>
-            192.168.8.101
-          </td>
-        </tr>
+        <!--<tr class="computer-data">-->
+          <!--<td>-->
+            <!--PC 2-->
+          <!--</td>-->
+          <!--<td>-->
+            <!--192.168.8.101-->
+          <!--</td>-->
+        <!--</tr>-->
         </tbody>
       </table>
     </div>
