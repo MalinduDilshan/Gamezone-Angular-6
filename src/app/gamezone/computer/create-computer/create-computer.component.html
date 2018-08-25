@@ -1,0 +1,16 @@
+<form [formGroup]="createForm" (ngSubmit)="submit()" class="popup-modal">
+  <h1 mat-dialog-title>{{title}}</h1>
+  <mat-dialog-content>
+    <mat-form-field>
+      <input matInput formControlName="pcname" placeholder="Enter pc name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="ipaddress" placeholder="Enter ip address">
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button color="primary"  type="submit" *ngIf="createMode">Submit</button>
+    <button mat-raised-button color="accent"  type="submit" *ngIf="editMode">Update</button>
+    <button mat-raised-button color="warn" type="button" mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</form>

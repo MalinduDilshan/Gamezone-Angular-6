@@ -1,0 +1,30 @@
+div.create-btn{
+  margin: 0px 15px;
+}
+
+/* Computer Table ===================================== */
+div.scroll{
+  width: auto;
+  overflow-y:auto;
+  height:480px;
+}
+
+table.computer{
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th.computer-header{
+  font-size: 12px;
+}
+
+tr.computer-data{
+  text-align: center;
+}
+
+td.computer-data{
+  font-size: 12px;
+}

@@ -1,0 +1,91 @@
+<!--<mat-toolbar color="primary" style="width:100%"> WELCOME </mat-toolbar><br/>-->
+
+<!--<form #form>-->
+  <!--<table>-->
+    <!--<tr><td> Account ID</td>-->
+
+      <!--<td>-->
+        <!--<mat-form-field>-->
+          <!--<input matInput (keyup)="applyFilter($event.target.value)" placeholder="Account ID" >-->
+        <!--</mat-form-field><br/>-->
+      <!--</td>-->
+
+      <!--&emsp;&emsp;&emsp;&emsp;-->
+      <!--<td>Department</td>-->
+      <!--<td>-->
+        <!--<mat-form-field >-->
+          <!--<mat-select style="min-width: 200px;" placeholder="Type to search" [(value)]="department">-->
+            <!--<input class="input1" matInput type="text" [(ngModel)]="filtertext"   name="department"   (change)="applyFilter($event.target.value)">-->
+            <!--<mat-option *ngFor="let dep of departments  | filter : filtertext"  [value]="dep.department" >-->
+              <!--{{ dep.department }}-->
+            <!--</mat-option>-->
+          <!--</mat-select>-->
+        <!--</mat-form-field>-->
+      <!--</td></tr>-->
+  <!--</table>-->
+<!--</form>-->
+<!--<br/><br/>-->
+<!--<button mat-raised-button color="primary" (click)="reset()">Reset </button>-->
+
+<!--&lt;!&ndash; Table starts here &ndash;&gt;-->
+
+<!--<mat-card>-->
+  <!--<div class="example-container mat-elevation-z8">-->
+
+    <!--<mat-table #table [dataSource]="dataSource1">-->
+
+      <!--&lt;!&ndash; Account No. Column &ndash;&gt;-->
+      <!--<ng-container matColumnDef="acc_id">-->
+        <!--<mat-header-cell *matHeaderCellDef> Account ID. </mat-header-cell>-->
+        <!--<mat-cell *matCellDef="let element">{{element.acc_id}}</mat-cell>-->
+      <!--</ng-container>-->
+
+      <!--&lt;!&ndash; Account Description Column &ndash;&gt;-->
+      <!--<ng-container matColumnDef="acc_des">-->
+        <!--<mat-header-cell *matHeaderCellDef> Account Description </mat-header-cell>-->
+        <!--<mat-cell *matCellDef="let element"><a (click)="openDialog(account)">{{element.acc_des}}</a> </mat-cell>-->
+      <!--</ng-container>-->
+
+      <!--&lt;!&ndash; Investigator Column &ndash;&gt;-->
+      <!--<ng-container matColumnDef="investigator">-->
+        <!--<mat-header-cell *matHeaderCellDef> Investigator </mat-header-cell>-->
+        <!--<mat-cell *matCellDef="let element"><a (click)="openDialog(account)">{{element.investigator}}</a> </mat-cell>-->
+      <!--</ng-container>-->
+
+      <!--&lt;!&ndash; Account CPC Column &ndash;&gt;-->
+      <!--<ng-container matColumnDef="CPC">-->
+        <!--<mat-header-cell *matHeaderCellDef> Account CPC </mat-header-cell>-->
+        <!--<mat-cell *matCellDef="let element"><a (click)="openDialog(account)">{{element.CPC}}</a></mat-cell>-->
+      <!--</ng-container>-->
+
+      <!--&lt;!&ndash; Location Column &ndash;&gt;-->
+      <!--<ng-container matColumnDef="location">-->
+        <!--<mat-header-cell *matHeaderCellDef> Location </mat-header-cell>-->
+        <!--<mat-cell *matCellDef="let element"><a (click)="openDialog(account)">{{element.location}}</a></mat-cell>-->
+      <!--</ng-container>-->
+
+
+      <!--&lt;!&ndash; Client Dept ID Column &ndash;&gt;-->
+      <!--<ng-container matColumnDef="dept_id">-->
+        <!--<mat-header-cell *matHeaderCellDef> DeptID </mat-header-cell>-->
+        <!--<mat-cell *matCellDef="let element"><a (click)="openDialog(account)">{{element.dept_id}}</a></mat-cell>-->
+      <!--</ng-container>-->
+
+
+      <!--&lt;!&ndash; Dept Description Column &ndash;&gt;-->
+      <!--<ng-container matColumnDef="deptdesc">-->
+        <!--<mat-header-cell *matHeaderCellDef> Dept Description </mat-header-cell>-->
+        <!--<mat-cell *matCellDef="let element"><a (click)="openDialog(account)">{{element.deptdesc}}</a></mat-cell>-->
+      <!--</ng-container>-->
+
+
+      <!--<mat-header-row *matHeaderRowDef="displayedColumns1" ></mat-header-row>-->
+      <!--<mat-row *matRowDef="let row; columns: displayedColumns1;" (click)="openDialog(row)"> </mat-row>-->
+    <!--</mat-table>-->
+
+    <!--<mat-paginator #paginator-->
+                   <!--[pageSize]="10"-->
+                   <!--[pageSizeOptions]="[5, 10, 20]">-->
+    <!--</mat-paginator>-->
+  <!--</div>-->
+<!--</mat-card>-->
