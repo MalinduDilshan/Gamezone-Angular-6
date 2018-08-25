@@ -47,9 +47,27 @@ export class CreateComputerComponent implements OnInit {
     }
   }
 
-  submit() {
+  createComputer() {
     this.computer.computer_name = this.createForm.value.pcname;
     this.computer.ip_address = this.createForm.value.ipaddress;
+    this.service.postData(this.computer).subscribe(result => {
+      this.response = result;
+      this.dialogRef.close(result);
+    });
+  }
+
+  editComputer() {
+    this.computer.primary_Key = this.data.dataKey.primary_Key;
+    this.computer.computer_name = this.createForm.value.pcname;
+    this.computer.ip_address = this.createForm.value.ipaddress;
+    this.service.postData(this.computer).subscribe(result => {
+      this.response = result;
+      this.dialogRef.close(result);
+    });
+  }
+
+  deleteComputer() {
+    this.computer.primary_Key = this.data.dataKey.primary_Key;
     this.service.postData(this.computer).subscribe(result => {
       this.response = result;
       this.dialogRef.close(result);

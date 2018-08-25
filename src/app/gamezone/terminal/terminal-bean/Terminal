@@ -1,0 +1,9 @@
+export class Terminal {
+  primary_Key: number;
+  assign_time: number;
+  duration: number;
+  progress_value: number;
+  time_left: number;
+  status: boolean;
+  power_cut: boolean;
+}
