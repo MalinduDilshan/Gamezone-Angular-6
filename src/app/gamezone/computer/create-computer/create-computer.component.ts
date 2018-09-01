@@ -18,18 +18,17 @@ export class CreateComputerComponent implements OnInit {
   private response: any;
 
   constructor(private service: ComputerService,
-              public dialogRef: MatDialogRef<CreateComputerComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: any) {
+              private dialogRef: MatDialogRef<CreateComputerComponent>,
+              @Inject(MAT_DIALOG_DATA) private data: any) {
   }
 
   public createForm = new FormGroup({
-    pcname: new FormControl(''),
-    ipaddress: new FormControl('')
+    pcName: new FormControl(''),
+    ipAddress: new FormControl('')
   });
 
   ngOnInit() {
     this.title = 'New Computer';
-    this.editMode = false;
     this.createMode = true;
     this.computer = new Computer();
     this.setData();
@@ -41,15 +40,16 @@ export class CreateComputerComponent implements OnInit {
       this.editMode = true;
       this.createMode = false;
       this.createForm.setValue({
-        pcname: this.data.dataKey.computer_name,
-        ipaddress: this.data.dataKey.ip_address
+        pcName: this.data.dataKey.computerName,
+        ipAddress: this.data.dataKey.ipAddress
       });
+      this.computer.primaryKey = this.data.dataKey.primaryKey;
     }
   }
 
   createComputer() {
-    this.computer.computer_name = this.createForm.value.pcname;
-    this.computer.ip_address = this.createForm.value.ipaddress;
+    this.computer.computerName = this.createForm.value.pcName;
+    this.computer.ipAddress = this.createForm.value.ipAddress;
     this.service.postData(this.computer).subscribe(result => {
       this.response = result;
       this.dialogRef.close(result);
@@ -57,18 +57,16 @@ export class CreateComputerComponent implements OnInit {
   }
 
   editComputer() {
-    this.computer.primary_Key = this.data.dataKey.primary_Key;
-    this.computer.computer_name = this.createForm.value.pcname;
-    this.computer.ip_address = this.createForm.value.ipaddress;
-    this.service.postData(this.computer).subscribe(result => {
+    this.computer.computerName = this.createForm.value.pcName;
+    this.computer.ipAddress = this.createForm.value.ipAddress;
+    this.service.putData(this.computer).subscribe(result => {
       this.response = result;
       this.dialogRef.close(result);
     });
   }
 
   deleteComputer() {
-    this.computer.primary_Key = this.data.dataKey.primary_Key;
-    this.service.postData(this.computer).subscribe(result => {
+    this.service.deleteData(this.computer.primaryKey).subscribe(result => {
       this.response = result;
       this.dialogRef.close(result);
     });

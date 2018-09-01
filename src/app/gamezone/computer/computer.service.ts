@@ -16,4 +16,12 @@ export class ComputerService {
   postData(computer) {
     return this.http.post(environment.computerUrl, computer);
   }
+
+  putData(computer) {
+    return this.http.put(environment.computerUrl, computer);
+  }
+
+  deleteData(computerId) {
+    return this.http.delete(environment.computerUrl + '/' + computerId );
+  }
 }

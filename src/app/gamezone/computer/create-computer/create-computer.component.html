@@ -2,16 +2,16 @@
   <h1 mat-dialog-title>{{title}}</h1>
   <mat-dialog-content>
     <mat-form-field>
-      <input matInput formControlName="pcname" placeholder="Enter pc name">
+      <input matInput formControlName="pcName" placeholder="Enter pc name">
     </mat-form-field>
     <mat-form-field>
-      <input matInput formControlName="ipaddress" placeholder="Enter ip address">
+      <input matInput formControlName="ipAddress" placeholder="Enter ip address">
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-raised-button color="primary"  type="submit" (click)="createComputer()" *ngIf="createMode">Submit</button>
-    <button mat-raised-button color="primary"  type="submit" (click)="editComputer()" *ngIf="editMode">Update</button>
-    <button mat-raised-button color="accent"  type="submit" (click)="deleteComputer()" *ngIf="editMode">Delete</button>
+    <button mat-raised-button color="primary"  (click)="createComputer()" *ngIf="createMode">Submit</button>
+    <button mat-raised-button color="primary" (click)="editComputer()" *ngIf="editMode">Update</button>
+    <button mat-raised-button color="accent"  (click)="deleteComputer()" *ngIf="editMode">Delete</button>
     <button mat-raised-button color="warn" type="button" mat-dialog-close>Cancel</button>
   </mat-dialog-actions>
 </form>
