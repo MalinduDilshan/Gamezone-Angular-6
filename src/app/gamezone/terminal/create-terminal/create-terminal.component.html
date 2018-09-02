@@ -1,1 +1,32 @@
-<h1>hi</h1>
+<form [formGroup]="createForm" class="popup-modal">
+  <h1 mat-dialog-title>{{title}}</h1>
+  <mat-dialog-content>
+    <div class="table">
+      <div class="row">
+        <div class="col-sm-6">
+          <mat-form-field>
+            <input matInput formControlName="pcName" placeholder="PC name" readonly="true">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput formControlName="status" placeholder="Status" readonly="true">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput formControlName="leftTime" placeholder="Time Left" readonly="true">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field>
+            <input matInput [matTimepicker]="picker" placeholder="Choose a time">
+            <mat-timepicker-toggle matSuffix [for]="picker"></mat-timepicker-toggle>
+            <mat-timepicker #picker color="primary"></mat-timepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button color="primary"  (click)="createTerminal()" *ngIf="createMode">Submit</button>
+    <button mat-raised-button color="primary"  (click)="updateTerminal()" *ngIf="editMode">Update</button>
+    <button mat-raised-button color="warn" type="button" mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</form>

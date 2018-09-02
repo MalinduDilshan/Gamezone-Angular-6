@@ -7,7 +7,7 @@
             <i class="material-icons">explore</i>
           </div>
           <div class="content">
-            <div class="text">ASSIGN TIME</div>
+            <div class="text">NEW BUTTON</div>
             <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
           </div>
         </div>
@@ -51,23 +51,23 @@
 
         <ng-container matColumnDef="pcName">
           <th mat-header-cell *matHeaderCellDef class="terminal-header bg-cyan"> PC Name</th>
-          <td mat-cell *matCellDef="let element" class="terminal-data"> {{element.computer_name}}</td>
+          <td mat-cell *matCellDef="let element" class="terminal-data"> {{element.computerName}}</td>
         </ng-container>
         <ng-container matColumnDef="progressBar">
           <th mat-header-cell *matHeaderCellDef class="terminal-header bg-cyan"> Progress Bar</th>
-          <td mat-cell *matCellDef="let element" class="terminal-data"> {{element.progress_bar}}</td>
+          <td mat-cell *matCellDef="let element" class="terminal-data"> {{element.terminal.progressValue}}</td>
         </ng-container>
         <ng-container matColumnDef="timeLeft">
           <th mat-header-cell *matHeaderCellDef class="terminal-header bg-cyan"> Time Left</th>
-          <td mat-cell *matCellDef="let element" class="terminal-data"> {{element.time_left}}</td>
+          <td mat-cell *matCellDef="let element" class="terminal-data"> {{element.terminal.leftTime}}</td>
         </ng-container>
         <ng-container matColumnDef="status">
           <th mat-header-cell *matHeaderCellDef class="terminal-header bg-cyan"> Status</th>
-          <td mat-cell *matCellDef="let element" class="terminal-data"> {{element.status}}</td>
+          <td mat-cell *matCellDef="let element" class="terminal-data"> {{element.terminal.status}}</td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openDialog(row)"></tr>
       </table>
     </div>
   </mat-card>

@@ -9,5 +9,7 @@ export const environment = {
   production: false,
 
   // ==== Computer ====
-  computerUrl: baseUrl + '/Computer'
+  computerUrl: baseUrl + '/Computer',
+  // ==== Terminal ====
+  terminalUrl: baseUrl + '/Terminal'
 };

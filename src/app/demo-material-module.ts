@@ -7,6 +7,7 @@
  */
 
 import {NgModule} from '@angular/core';
+import { Angular5TimePickerModule } from 'angular5-time-picker';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -94,6 +95,7 @@ import {PortalModule} from '@angular/cdk/portal';
     OverlayModule,
     PlatformModule,
     PortalModule,
+    Angular5TimePickerModule
   ]
 })
 export class DemoMaterialModule {}
