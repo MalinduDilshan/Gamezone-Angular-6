@@ -31,7 +31,7 @@ export class CreateTerminalComponent implements OnInit {
   ngOnInit() {
     this.createMode = true;
     if (this.data.dataKey.terminal.progressValue !== 0) {
-      this.title = 'Edit Terminal ' + this.data.dataKey.computerName;
+      this.title = 'Update Terminal ' + this.data.dataKey.computerName;
       this.editMode = true;
       this.createMode = false;
     } else {
